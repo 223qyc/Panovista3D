@@ -1,0 +1,17 @@
+numpy>=1.21.0
+opencv-python>=4.5.0
+scipy>=1.7.0
+matplotlib>=3.4.0
+open3d>=0.15.0
+#colmap>=3.8
+pycolmap>=0.4.0
+torch>=1.9.0
+torchvision>=0.10.0
+tqdm>=4.62.0
+pillow>=8.3.0
+scikit-image>=0.18.0
+pyyaml>=6.0
+#logging>=0.5.1.2
+concurrent-log-handler>=0.9.20
+psutil>=5.9.0
+glfw>=2.5.5

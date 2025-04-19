@@ -1,0 +1,51 @@
+# 数据路径配置
+paths:
+  raw_data: "data/raw"
+  output_dir: "data/output"
+  colmap_workspace: "data/colmap_workspace"
+
+# 预处理配置
+preprocessing:
+  image_size: [1920, 1080]  # 图像缩放尺寸
+  feature_extractor: "SIFT"  # 特征提取器类型
+  max_features: 10000       # 每张图像最大特征点数
+  quality: "high"           # 处理质量：low, medium, high
+  use_gpu: true            # 是否使用GPU加速
+  batch_size: 4            # 批处理大小
+  noise_reduction: true    # 是否进行噪声消除
+  contrast_enhancement: true # 是否进行对比度增强
+  color_balance: true      # 是否进行色彩平衡
+
+# 重建配置
+reconstruction:
+  use_gpu: true           # 是否使用GPU加速
+  num_threads: 8          # 使用的线程数
+  sparse:
+    min_num_matches: 15     # 最小匹配点数
+    min_tri_angle: 1.0      # 最小三角化角度
+    max_reproj_error: 4.0   # 最大重投影误差
+    refine_iterations: 3    # 优化迭代次数
+  dense:
+    min_depth: 0.1         # 最小深度值
+    max_depth: 100.0       # 最大深度值
+    num_samples: 8         # 每个像素采样点数
+    patch_size: 11         # 补丁大小
+    window_radius: 5       # 窗口半径
+    window_step: 2         # 窗口步长
+    filter_min_ncc: 0.1    # 最小NCC阈值
+    filter_min_triangulation_angle: 3.0  # 最小三角化角度
+
+# 可视化配置
+visualization:
+  point_size: 1.0          # 点云显示点大小
+  background_color: [0, 0, 0]  # 背景颜色
+  mesh_simplification: 0.5  # 网格简化比例
+  interactive: true        # 是否启用交互式可视化
+  lighting: true           # 是否启用光照效果
+  material_type: "defaultLit"  # 材质类型：defaultLit, normals, depth
+  show_coordinate_frame: true  # 是否显示坐标系
+  camera_controls: true    # 是否启用相机控制
+  screenshot_path: "data/output/screenshots"  # 截图保存路径
+  texture_mapping: true    # 是否启用纹理映射
+  point_cloud_density: "high"  # 点云密度：low, medium, high
+  mesh_quality: "high"     # 网格质量：low, medium, high
